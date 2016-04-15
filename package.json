@@ -65,12 +65,14 @@
   },
   "dependencies": {
     "alt": "^0.18.4",
+    "alt-utils": "^1.0.0",
     "bootstrap": "^3.3.6",
     "core-js": "^2.0.0",
     "immutable": "^3.7.6",
     "node-uuid": "^1.4.7",
     "normalize.css": "^4.0.0",
     "react": "^15.0.0",
+    "react-addons": "^0.9.1-deprecated",
     "react-bootstrap": "^0.28.5",
     "react-dom": "^15.0.0"
   }
