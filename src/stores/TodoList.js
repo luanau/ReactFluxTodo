@@ -1,7 +1,7 @@
 import ImmutableStore from 'alt-utils/lib/ImmutableUtil';
 import { List }       from 'immutable';
 
-import AltInstance    from 'libs/AltInstance';
+import AltInstance    from 'lib/AltInstance';
 import Actions        from 'actions/TodoList';
 
 class TodoListStore {

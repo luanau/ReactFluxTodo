@@ -1,17 +1,20 @@
 //import React                    from 'react/addons';
 import React                    from 'react';
 
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+
 import { Grid, Row, ListGroup } from 'react-bootstrap';
 import TodoListStore            from 'stores/TodoList';
 import TodoListTask             from 'components/TodoListTask';
+import AddNewTaskForm           from 'components/AddNewTaskForm';
 
 class TodoList extends React.Component {
   constructor(props) {
     super(props);
+    // let { shouldComponentUpdate } = PureRenderMixin;
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 
-    let { shouldComponentUpdate } = React.addons.PureRenderMixin;
-
-    this.shouldComponentUpdate    = shouldComponentUpdate.bind(this);
+    // this.shouldComponentUpdate    = shouldComponentUpdate.bind(this);
     this.state                    = { tasks: TodoListStore.getState() };
     this.listChanged              = this.listChanged.bind(this);
   }
@@ -33,6 +36,8 @@ class TodoList extends React.Component {
               <TodoListTask key={task.get('id')} task={task} />
              ).toJS()}
           </ListGroup>
+          <h2>Add new task:</h2>
+          <AddNewTaskForm />
         </Row>
       </Grid>
     );
